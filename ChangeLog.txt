@@ -1,0 +1,16 @@
+Version 0.2 
+
+    Date: 12/11/2022
+
+    Changes: 
+
+        - save_command now loops up to and INCLUDING cmd-index,
+          allowing the saved destination to properly be NULL-terminated,
+          fixing the bug with intermixed input, output, and pipes When
+          calling any command with an extra parameter. 
+        - print_prompt now prints a simple shell prompt if any of
+          the get environment or directory calls fail. 
+        - init_shell and exit_shell both now print leading new line 
+          in a separate printf call to allow string literals in 
+          subsequent calls to be lined up exactly as their output 
+          will appear on screen.
